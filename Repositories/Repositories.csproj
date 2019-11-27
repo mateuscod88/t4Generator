@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CodeDom" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="IRepository\RepositoryInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RepositoryInterface.cs</LastGenOutput>
+    </None>
+    <None Update="Repository\RepositoryConcrete.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RepositoryConcrete.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="IRepository\RepositoryInterface.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RepositoryInterface.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Repository\RepositoryConcrete.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RepositoryConcrete.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

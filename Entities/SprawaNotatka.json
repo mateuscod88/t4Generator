@@ -1,0 +1,14 @@
+{
+  
+  SprawaNotatka :{
+    Id: string,
+    IdSprawa: string,
+    Typ: TypNotatki
+    IdPodmiotWlascicielBiznesowy: string,
+    DataUtworzenia: TimeStamp,
+    CzyUsuniety: bool,
+    DataUsuniecia: TimeStamp,
+    IdUzytkownikUsuwajacy: string
+  }
+
+}

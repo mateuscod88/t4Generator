@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CodeDom" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Command\AS\CommandASDto.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CommandASDto.cs</LastGenOutput>
+    </None>
+    <None Update="Command\AS\CommandASHandler.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CommandASHandler.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Command\DS\CommandDSDto.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CommandDSDto.cs</LastGenOutput>
+    </None>
+    <None Update="Command\DS\CommandDSHandler.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CommandDSHandler.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Command\AS\CommandASDto.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CommandASDto.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Command\AS\CommandASHandler.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CommandASHandler.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Command\DS\CommandDSDto.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CommandDSDto.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Command\DS\CommandDSHandler.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CommandDSHandler.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
